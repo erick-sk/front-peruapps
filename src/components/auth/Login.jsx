@@ -9,6 +9,8 @@ import {
 	FormLabel,
 	Button,
 	Center,
+	Text,
+	Link,
 } from '@chakra-ui/react';
 import MainImage from '../../images/main-img.svg';
 
@@ -22,12 +24,28 @@ const Login = () => {
 					</Center>
 					<Spacer />
 					<Center w="40%">
-						<FormControl mt={4}>
-							<FormLabel>Email address</FormLabel>
-							<Input type="email" />
-							<FormLabel>Password</FormLabel>
-							<Input type="password" />
-							<Button mt={4} colorScheme="teal" type="submit">
+						<FormControl>
+							<FormLabel htmlFor="email">Email address</FormLabel>
+							<Input
+								type="email"
+								id="email"
+								name="email"
+								placeholder="steve@mail.com"
+							/>
+
+							<FormLabel htmlFor="password">Password</FormLabel>
+							<Input
+								type="password"
+								id="password"
+								name="password"
+								placeholder="Your password"
+							/>
+
+							<Text fontSize="mm" mt="2">
+								<Link href="/register">Don't have an account yet?</Link>
+							</Text>
+
+							<Button mt={2} colorScheme="teal" type="submit">
 								Login
 							</Button>
 						</FormControl>
